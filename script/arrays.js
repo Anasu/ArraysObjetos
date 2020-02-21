@@ -58,6 +58,10 @@ window.onload = function ()
     printPaciente(traumatologia);
     document.write("<h3>Dental:</h3>");
     printPaciente(dental);
+
+    // Modificar previsiones de Dental. Cambiar isapre-fonasa. Usar forEach e ifs
+    cambiarPrevision(dental);
+    console.log(dental);
 }
 const printInfo = function(sector)
 {
@@ -87,4 +91,22 @@ const printPaciente = function(sector)
             document.write(`<p>${objeto.paciente}</p>`);
         });
 }
+const cambiarPrevision = function(sector)
+{
+    sector.forEach(
+        function(objeto)
+        {
+            switch (objeto.prevision)
+            {
+                case "ISAPRE":
+                    objeto.prevision = "FONASA";
+                    break;
+                case "FONASA":
+                    objeto.prevision = "ISAPRE";
+                    break;
+                default:
+                    console.log("La prevision no calza con nada");
+                    break;
+            }
+        });
 }
