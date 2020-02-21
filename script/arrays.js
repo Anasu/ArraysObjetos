@@ -50,6 +50,14 @@ window.onload = function ()
     //cada dato debe estar separado por guión
     document.write("<h2>Pacientes de sector Dental</h2>");
     printInfo(dental);
+    // Imprimir un listado de todos los pacientes que se atendieron en el centro médico:
+    document.write("<h2>Asistentes al centro médico:</h2>");
+    document.write("<h3>Radiología:</h3>");
+    printPaciente(radiologia);
+    document.write("<h3>Traumatología:</h3>");
+    printPaciente(traumatologia);
+    document.write("<h3>Dental:</h3>");
+    printPaciente(dental);
 }
 const printInfo = function(sector)
 {
@@ -70,5 +78,13 @@ const printInfo = function(sector)
         writeString += "</p>";
         document.write(writeString);
     }
+}
+const printPaciente = function(sector)
+{
+    sector.forEach(
+        function(objeto)
+        {
+            document.write(`<p>${objeto.paciente}</p>`);
+        });
 }
 }
