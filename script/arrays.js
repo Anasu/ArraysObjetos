@@ -41,4 +41,9 @@ window.onload = function ()
     traumatologia.concat(traumatologiaAdd);
     console.log(traumatologia);
 
+    // Eliminar el primer (shift) y último (pop) elemento de radiología
+    radiologia.shift();
+    radiologia.pop();
+    console.log(radiologia);
+
 }
