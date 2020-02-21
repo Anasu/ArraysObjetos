@@ -46,4 +46,29 @@ window.onload = function ()
     radiologia.pop();
     console.log(radiologia);
 
+    // Escribir con document.write la lista de consultas médicas de Dental
+    //cada dato debe estar separado por guión
+    document.write("<h2>Pacientes de sector Dental</h2>");
+    printInfo(dental);
+}
+const printInfo = function(sector)
+{
+    let keys = ["hora", "especialista", "paciente", "rut", "prevision"];
+    for(let i in sector)
+    {
+        let ob = sector[i];
+        let writeString = "<p>";
+        for(let j in keys)
+        {
+            let key = keys[j];
+            if(j > 0)
+            {
+                writeString += " - ";
+            }
+            writeString += ob[key];
+        }
+        writeString += "</p>";
+        document.write(writeString);
+    }
+}
 }
